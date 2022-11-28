@@ -86,8 +86,9 @@ workspace "Lyra"                   -- Solution Name
     -- where to find header files that you might be including, mainly for library headers.
     includedirs
     {
-      SourceDir -- include root source directory to allow for absolute include paths
+      SourceDir, -- include root source directory to allow for absolute include paths
       -- include the headers of any libraries/dlls you need
+      "vendor/glm"
     }
 
 
@@ -97,6 +98,7 @@ workspace "Lyra"                   -- Solution Name
     libdirs
     {
       -- add dependency directories here
+      "vendor/glm"
     }
 
     links

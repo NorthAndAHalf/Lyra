@@ -1,6 +1,8 @@
 #include <iostream>
+#include "Application.h"
 
 int main()
 {
-    while(true) std::cout << "lol" << std::endl;
+    Application app = Application();
+    app.Run();
 }
