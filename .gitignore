@@ -1,0 +1,9 @@
+/bin_Debug_x64
+/bin_Debug_x86
+/obj
+/.vs
+*sln
+*vcxproj
+*vcxproj.filters
+*vcxproj.user
+premake5.lua
