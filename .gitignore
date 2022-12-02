@@ -1,6 +1,7 @@
 /bin_Debug_x64
 /bin_Debug_x86
 /obj
+/renders
 /.vs
 *sln
 *vcxproj

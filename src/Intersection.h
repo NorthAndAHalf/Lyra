@@ -11,12 +11,13 @@ enum class IntersectionType
 
 struct Intersection
 {
-	Intersection(IntersectionType _type, glm::vec3 _intersectionPoint, glm::vec3 _rayDir, glm::vec3 _normal) 
-		: type(_type), intersectionPoint(_intersectionPoint), rayDir(_rayDir), normal(_normal) {}
+	Intersection(IntersectionType _type, glm::vec3 _intersectionPoint, glm::vec3 _rayDir, glm::vec3 _normal, glm::vec3 _colour) 
+		: type(_type), intersectionPoint(_intersectionPoint), rayDir(_rayDir), normal(_normal), colour(_colour) {}
 
 	IntersectionType type;
 	glm::vec3 intersectionPoint;
 	glm::vec3 rayDir;
 	glm::vec3 normal;
+	glm::vec3 colour;
 	// Possibly add material later
 };
