@@ -5,5 +5,6 @@
 
 class Hittable
 {
+public:
 	virtual Intersection intersect(Ray* r) = 0;
 };

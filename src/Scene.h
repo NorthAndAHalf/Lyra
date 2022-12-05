@@ -15,6 +15,6 @@ public:
 	void add_hittable(Hittable* h) { m_Hittables.push_back(h); }
 
 private:
-	std::list<Hittable*> m_Hittables;
+	std::vector<Hittable*> m_Hittables;
 	Camera* m_Camera;
 };

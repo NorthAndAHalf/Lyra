@@ -9,7 +9,6 @@ class Image
 {
 public:
 	Image(unsigned int width, unsigned int height);
-	~Image();
 
 	// These are 0 based
 	void add_pixel(unsigned int width, unsigned int height, glm::vec3 p);
@@ -22,5 +21,5 @@ private:
 	unsigned int m_Width;
 	unsigned int m_Height;
 	
-	glm::vec3* m_Pixels;
+	std::vector<glm::vec3> m_Pixels;
 };
