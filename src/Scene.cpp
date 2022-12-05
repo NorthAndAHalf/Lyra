@@ -1,5 +1,6 @@
 #include "Scene.h"
 #include <iostream>
+#include "lighting/Shading.h"
 
 Scene::Scene(Camera* camera)
 	: m_Camera(camera)
@@ -32,7 +33,7 @@ Image Scene::Render(unsigned int width, unsigned int height)
 					closest = i;
 				}
 			}
-			image.add_pixel(x, y, closest.colour);
+			image.add_pixel(x, y, phong_reflect(&closest, glm::vec3(5.0, -5.0, 5.0), glm::vec3(1.0), 0.2f, 0.7f, 8.0f));
 		}
 	}
 	return image;

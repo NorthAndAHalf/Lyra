@@ -14,12 +14,12 @@ Application::Application()
 void Application::Run()
 {
 	std::string inputStr;
-	std::cout << "Pleae enter the output directory and file name: ";
+	std::cout << "Please enter the output directory and file name: ";
 	std::cin >> inputStr;
 
 	Camera camera = Camera(1.0, glm::vec3(0.0), glm::vec3(0.0, 0.0, -1.0));
 	Scene scene = Scene(&camera);
-	Sphere* sphere = new Sphere(glm::vec3(0.0, 0.0, -2.0), 0.5, glm::vec3(1.0, 0.2, 1.0));
+	Sphere* sphere = new Sphere(glm::vec3(0.0, 0.0, -2.0), 0.5, glm::vec3(0.7, 0.0, 1.0));
 	scene.add_hittable(sphere);
 	Image image = scene.Render(1000, 1000);
 	delete sphere;

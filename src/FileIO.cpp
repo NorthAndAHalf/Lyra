@@ -28,7 +28,7 @@ bool FileIO::outputPPM(Image* image, std::string path)
 			for (unsigned int x = 0; x < image->get_width(); x++)
 			{
 				glm::vec3 pixel = image->get_pixel(x, y);
-				fw << pixel.x * 255 << " " << pixel.y * 255 << " " << pixel.z * 255 << "\n";
+				fw << (int)(pixel.x * 255.0f) << " " << (int)(pixel.y * 255.0f) << " " << (int)(pixel.z * 255.0f) << "\n";
 			}
 		}
 		fw.close();
