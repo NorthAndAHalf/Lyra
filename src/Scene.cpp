@@ -34,8 +34,7 @@ Image Scene::Render(unsigned int width, unsigned int height)
 					closest = i;
 				}
 			}
-			Light light = Light(glm::vec3(5.0, -5.0, 5.0), glm::vec3(1.0), 0.7f);
-			image.add_pixel(x, y, phong_reflect(&closest, &light, 0.2f, 8.0f));
+			image.add_pixel(x, y, phong_reflect(&closest, &m_Lights, 0.2f, 8.0f));
 		}
 	}
 	return image;
