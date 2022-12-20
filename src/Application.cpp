@@ -22,8 +22,8 @@ void Application::Run()
 	Scene scene = Scene(&camera);
 	Sphere* sphere = new Sphere(glm::vec3(  0.5, -0.5, -2.0), 0.4, glm::vec3(1.0, 0.0, 0.0));
 	Sphere* sphere1 = new Sphere(glm::vec3(-0.5,  0.5, -2.0), 0.2, glm::vec3(1.0, 1.0, 1.0));
-	Light* light = new Light(glm::vec3(-5.0, -5.0, -5.0), glm::vec3(1.0), 0.8f);
-	Light* light1 = new Light(glm::vec3( 0.0, -3.0,  -2.0), glm::vec3(0.8, 0.0, 1.0), 0.8f);
+	Light* light = new Light(glm::vec3(-5.0, -5.0, -5.0), glm::vec3(1.0), 0.5f);
+	Light* light1 = new Light(glm::vec3( 0.0, -3.0,  -2.0), glm::vec3(1.0), 0.5f);
 
 	scene.add_hittable(sphere);
 	scene.add_hittable(sphere1);

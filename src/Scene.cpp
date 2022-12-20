@@ -2,6 +2,7 @@
 #include <iostream>
 #include "lighting/Shading.h"
 #include "lighting/Light.h"
+#include "TraceRay.h"
 
 Scene::Scene(Camera* camera)
 	: m_Camera(camera)
@@ -21,20 +22,8 @@ Image Scene::Render(unsigned int width, unsigned int height)
 			Ray ray = Ray(m_Camera->get_pos() + pixel, m_Camera->get_direction());
 			std::list<Intersection> hits = std::list<Intersection>();
 
-			for (Hittable* h : m_Hittables) 
-			{
-				hits.push_back(h->intersect(&ray));
-			}
-
-			Intersection closest = hits.front();
-			for (const Intersection& i : hits)
-			{
-				if (i.distance < closest.distance)
-				{
-					closest = i;
-				}
-			}
-			image.add_pixel(x, y, phong_reflect(&closest, &m_Lights, 0.2f, 8.0f));
+			Intersection closest = TraceRay(this, &ray);
+			image.add_pixel(x, y, phong_reflect(&closest, &m_Lights, 0.2f, 15.0f));
 		}
 	}
 	return image;
