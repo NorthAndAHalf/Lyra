@@ -4,4 +4,4 @@
 #include "Scene.h"
 #include "Ray.h"
 
-glm::vec3 TraceRay(Scene* scene, Ray* ray);
+glm::vec3 TraceRay(Scene* scene, Ray* ray, int bounceLimit);

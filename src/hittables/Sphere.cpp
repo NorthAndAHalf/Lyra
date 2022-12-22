@@ -14,5 +14,6 @@ Intersection Sphere::intersect(Ray* r)
     if (h < 0.0) return Intersection(IntersectionType::NONE, 2000.0, glm::vec3(0.0), glm::vec3(0.0), glm::vec3(0.0), glm::vec3(0.0));
     h = sqrt(h);
     double t = -b - h;
+    if (t < 0.0) return Intersection(IntersectionType::NONE, 2000.0, glm::vec3(0.0), glm::vec3(0.0), glm::vec3(0.0), glm::vec3(0.0));
     return Intersection(IntersectionType::PRIMITIVE, t, r->at(t), r->get_direction(), glm::normalize(m_Centre - r->at(t)), m_Colour);
 }
