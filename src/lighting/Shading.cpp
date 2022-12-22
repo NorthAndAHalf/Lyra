@@ -5,8 +5,11 @@
 
 // In the future, adapt this function to be able to work with emmisive objects as well as light objects, idk how emissive objects will work yet
 // Future me problem :skull:
+// Update: Actually nvm probably since phong reflections are just a first step and I'll be going with actual reflections from now on
+// Still need to figure out how emissive objects will work there though
 
-glm::vec3 phong_reflect(Intersection* i, std::vector<Light*>* lights, float ai, float smoothness)
+// Specular is fucked I think
+glm::vec3 phong_reflect(const Intersection* i, const std::vector<Light*>* lights, float ai, float smoothness)
 {
     glm::vec3 finalCol = glm::vec3(0.0);
 
@@ -26,4 +29,9 @@ glm::vec3 phong_reflect(Intersection* i, std::vector<Light*>* lights, float ai, 
     }
 
     return i->colour * finalCol;
+}
+
+glm::vec3 flat_colour(const Intersection& intersection)
+{
+    return intersection.colour;
 }

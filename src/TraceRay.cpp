@@ -1,7 +1,8 @@
 #include "TraceRay.h"
 #include "hittables/Hittable.h"
+#include "lighting/Shading.h"
 
-Intersection TraceRay(Scene* scene, Ray* ray)
+glm::vec3 TraceRay(Scene* scene, Ray* ray)
 {
 	std::vector<Intersection> hits;
 	for (Hittable* h : *scene->get_hittables())
@@ -18,5 +19,5 @@ Intersection TraceRay(Scene* scene, Ray* ray)
 		}
 	}
 
-	return closest;
+	return flat_colour(closest);
 }
